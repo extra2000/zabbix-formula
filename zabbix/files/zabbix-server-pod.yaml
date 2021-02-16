@@ -1,0 +1,87 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zabbix-server-pod
+spec:
+  restartPolicy: Never #OnFailure
+  containers:
+  - name: server
+    image: {{ server.image.name }}
+    command: ['/usr/sbin/zabbix_server', '--foreground', '-c', '/etc/zabbix/zabbix_server.conf']
+    resources:
+      requests:
+        memory: {{ server.resources.requests.memory }}
+      limits:
+        memory: {{ server.resources.limits.memory }}
+    ports:
+    - containerPort: {{ server.port.passive.container }}
+      hostPort: {{ server.port.passive.host }}
+      hostIP: {{ server.port.passive.ip }}
+      protocol: tcp
+    - containerPort: {{ server.port.active.container }}
+      hostPort: {{ server.port.active.host }}
+      hostIP: {{ server.port.active.ip }}
+      protocol: tcp
+    env:
+    - name: DB_SERVER_HOST
+      value: {{ server.database.host }}
+    - name: DB_SERVER_PORT
+      value: {{ server.database.port }}
+    - name: POSTGRES_DB
+      value: {{ server.database.dbname }}
+    - name: POSTGRES_USER
+      value: {{ server.database.username }}
+    - name: POSTGRES_PASSWORD
+      value: {{ server.database.password }}
+    - name: ZBX_DEBUGLEVEL
+      value: {{ server.loglevel }}
+    - name: ZBX_TIMEOUT
+      value: {{ server.timeout }}
+  - name: web
+    image: {{ web.image.name }}
+    resources:
+      requests:
+        memory: {{ web.resources.requests.memory }}
+      limits:
+        memory: {{ web.resources.limits.memory }}
+    ports:
+    - containerPort: {{ web.port.http.container }}
+      hostPort: {{ web.port.http.host }}
+      hostIP: {{ web.port.http.ip }}
+      protocol: tcp
+    env:
+    - name: DB_SERVER_HOST
+      value: {{ web.database.host }}
+    - name: DB_SERVER_PORT
+      value: {{ web.database.port }}
+    - name: POSTGRES_DB
+      value: {{ web.database.dbname }}
+    - name: POSTGRES_USER
+      value: {{ web.database.username }}
+    - name: POSTGRES_PASSWORD
+      value: {{ web.database.password }}
+    - name: ZBX_SERVER_HOST
+      value: {{ web.server.ip }}
+    - name: ZBX_SERVER_PORT
+      value: {{ web.server.port }}
+  - name: agent
+    image: {{ agent.image.name }}
+    command: ['/usr/sbin/zabbix_agentd', '--foreground', '-c', '/etc/zabbix/zabbix_agentd.conf']
+    resources:
+      requests:
+        memory: {{ agent.resources.requests.memory }}
+      limits:
+        memory: {{ agent.resources.limits.memory }}
+    env:
+    - name: ZBX_SERVER_HOST
+      value: {{ agent.server.ip }}
+    - name: ZBX_SERVER_PORT
+      value: {{ agent.server.port }}
+    - name: ZBX_TIMEOUT
+      value: {{ agent.timeout }}
+    - name: ZBX_PASSIVE_ALLOW
+      value: {{ agent.passive_allow }}
+    - name: ZBX_ACTIVE_ALLOW
+      value: {{ agent.active_allow }}
+    - name: ZBX_DEBUGLEVEL
+      value: {{ agent.loglevel }}
