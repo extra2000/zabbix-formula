@@ -7,7 +7,6 @@ spec:
   containers:
   - name: server
     image: {{ server.image.name }}
-    command: ['/usr/sbin/zabbix_server', '--foreground', '-c', '/etc/zabbix/zabbix_server.conf']
     resources:
       requests:
         memory: {{ server.resources.requests.memory }}
@@ -66,7 +65,6 @@ spec:
       value: {{ web.server.port }}
   - name: agent
     image: {{ agent.image.name }}
-    command: ['/usr/sbin/zabbix_agentd', '--foreground', '-c', '/etc/zabbix/zabbix_agentd.conf']
     resources:
       requests:
         memory: {{ agent.resources.requests.memory }}
