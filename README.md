@@ -17,4 +17,3 @@ SaltStack Formula for [Zabbix](https://github.com/zabbix/zabbix).
 | `zabbix.service` | Apply `zabbix.service.postgres` and `zabbix.service.server` states. |
 | `zabbix.service.postgres` | Deploy Postgres pod. |
 | `zabbix.service.server` | Deploy Zabbix Server pod. |
-| `zabbix.agent` | Install and deploy Zabbix agent without container. |
