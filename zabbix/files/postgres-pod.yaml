@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: postgres-pod
 spec:
-  restartPolicy: Never
+  restartPolicy: OnFailure
   containers:
   - name: postgres
     image: {{ postgres.image.name }}

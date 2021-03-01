@@ -3,7 +3,7 @@ kind: Pod
 metadata:
   name: zabbix-server-pod
 spec:
-  restartPolicy: Never #OnFailure
+  restartPolicy: OnFailure
   containers:
   - name: server
     image: {{ server.image.name }}
