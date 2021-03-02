@@ -2,9 +2,14 @@
 # vim: ft=sls
 
 {%- set tplroot = tpldir.split('/')[0] %}
-{%- from tplroot ~ "/map.jinja" import KONG with context %}
+{%- from tplroot ~ "/map.jinja" import ZABBIX with context %}
 
-kong-container-dead:
+zabbix-server-pod-destroyed:
   cmd.run:
-    - name: podman pod rm --force kong-pod
-    - runas: {{ KONG.hostuser.name }}
+    - name: podman pod rm --force zabbix-server-pod
+    - runas: {{ ZABBIX.hostuser.name }}
+
+postgres-pod-destroyed:
+  cmd.run:
+    - name: podman pod rm --force postgres-pod
+    - runas: {{ ZABBIX.hostuser.name }}
