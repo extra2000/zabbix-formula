@@ -32,9 +32,9 @@ zabbix:
     timeout: 4
     resources:
       requests:
-        memory: 256Mi
+        memory: 512Mi
       limits:
-        memory: 256Mi
+        memory: 512Mi
   web:
     image:
       name: zabbix/zabbix-web-nginx-pgsql:ubuntu-5.0.7
@@ -54,9 +54,9 @@ zabbix:
       port: 10051
     resources:
       requests:
-        memory: 256Mi
+        memory: 512Mi
       limits:
-        memory: 256Mi
+        memory: 512Mi
   agent:
     image:
       name: zabbix/zabbix-agent:ubuntu-5.0.7
@@ -74,9 +74,9 @@ zabbix:
     loglevel: 3
     resources:
       requests:
-        memory: 256Mi
+        memory: 64Mi
       limits:
-        memory: 256Mi
+        memory: 64Mi
   database:
     postgres:
       image:
