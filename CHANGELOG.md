@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.2.0](https://github.com/extra2000/zabbix-formula/compare/v1.1.0...v1.2.0) (2021-03-05)
+
+
+### Features
+
+* **zabbix.service:** Implement state `zabbix.service.dead` to destroy Zabbix server and Postgres pods ([8d1226e](https://github.com/extra2000/zabbix-formula/commit/8d1226eb17d4f0b4f71a219e29e1c6e29e747c6e))
+
+
+### Performance Improvements
+
+* **defaults.yaml, pillar.example:** Optimize container resources ([8d941a8](https://github.com/extra2000/zabbix-formula/commit/8d941a8babd5fd7e3f31f03ab829cd3d7e2c5d80))
+
+
+### Fixes
+
+* **postgres, zabbix-server:** Set pod to always restart `OnFailure` ([b4659db](https://github.com/extra2000/zabbix-formula/commit/b4659db9811907ae34202e5b7239f8b4af13fcf5))
+
+
+### Code Refactoring
+
+* **zabbix.agent:** Remove Zabbix agent ([c9a7135](https://github.com/extra2000/zabbix-formula/commit/c9a71356edf4b40e641289073a05eefd3a8f3596))
+
+
+### Documentations
+
+* **README:** Add state `zabbix.service.dead` ([fa2adee](https://github.com/extra2000/zabbix-formula/commit/fa2adeead7bb88895ef96c8a70315d09548ef57a))
+* **README:** Remove `zabbix.agent` state ([a96e105](https://github.com/extra2000/zabbix-formula/commit/a96e1053fbd33063f6c457da8ad297eee5995a34))
+
 ## [1.1.0](https://github.com/extra2000/zabbix-formula/compare/v1.0.0...v1.1.0) (2021-03-01)
 
 
