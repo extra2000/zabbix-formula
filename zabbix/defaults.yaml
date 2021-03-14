@@ -13,7 +13,7 @@ zabbix:
       bridge: cni-podman0
   server:
     image:
-      name: zabbix/zabbix-server-pgsql:ubuntu-5.0.7
+      name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.0.7
     database:
       host: postgres-pod.zabbixnet
       port: 5432
@@ -38,7 +38,7 @@ zabbix:
         memory: 512Mi
   web:
     image:
-      name: zabbix/zabbix-web-nginx-pgsql:ubuntu-5.0.7
+      name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.0.7
     database:
       host: postgres-pod.zabbixnet
       port: 5432
@@ -60,7 +60,7 @@ zabbix:
         memory: 512Mi
   agent:
     image:
-      name: zabbix/zabbix-agent:ubuntu-5.0.7
+      name: docker.io/zabbix/zabbix-agent:ubuntu-5.0.7
     server:
       ip: 127.0.0.1
       port: 10051
@@ -81,7 +81,7 @@ zabbix:
   database:
     postgres:
       image:
-        name: docker.io/postgres:13.2-alpine
+        name: docker.io/library/postgres:13.2-alpine
       dbname: zabbix
       user: zabbixuser
       password: abcde12345
