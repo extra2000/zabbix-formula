@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.3.0](https://github.com/extra2000/zabbix-formula/compare/v1.2.0...v1.3.0) (2021-03-14)
+
+
+### Features
+
+* **service:** Implement `destroy` function for `service.postgres` and `service.server` states ([024e56f](https://github.com/extra2000/zabbix-formula/commit/024e56f5efc8078ce2efdfe9a3dc8cafa61eef25))
+
+
+### Fixes
+
+* **networking:** Make `bridge` customizable to prevent pod networking conflicts ([93da047](https://github.com/extra2000/zabbix-formula/commit/93da047c30f213453db1228dd26debac7f8f0062))
+* **service:** Ensure all images will be successfully pulled and destroy existing pods before creating new pods ([bfd0ef4](https://github.com/extra2000/zabbix-formula/commit/bfd0ef44cff1c3297dbf379f597ae1f8b9e5673d))
+
+
+### Code Refactoring
+
+* **pods:** Explicitly define capabilities ([dacb54f](https://github.com/extra2000/zabbix-formula/commit/dacb54fa1d731f40c67afc2e80e82e0fe1a9d915))
+
 ## [1.2.0](https://github.com/extra2000/zabbix-formula/compare/v1.1.0...v1.2.0) (2021-03-05)
 
 
