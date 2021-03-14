@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/extra2000/zabbix-formula/compare/v1.3.0...v2.0.0) (2021-03-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **config/nginx.sls:** This `zabbix-formula` now expects NGINX deployment via Podman.
+
+### Code Refactoring
+
+* **defaults.yaml:** Prefix image name with `docker.io` ([6d77e3c](https://github.com/extra2000/zabbix-formula/commit/6d77e3c7a50ab7d9d4b9173f954b344ac53fb4a0))
+
+
+### Fixes
+
+* **config/nginx.sls:** Fix for NGINX deployment via [nginx-formula v2.0.0](https://github.com/extra2000/nginx-formula/releases/tag/v2.0.0) ([fadf47f](https://github.com/extra2000/zabbix-formula/commit/fadf47fbac47aa5fa2490cc2740489dad8711dcc))
+
 ## [1.3.0](https://github.com/extra2000/zabbix-formula/compare/v1.2.0...v1.3.0) (2021-03-14)
 
 
