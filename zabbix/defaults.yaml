@@ -38,7 +38,7 @@ zabbix:
         memory: 512Mi
   web:
     image:
-      name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.0.7
+      name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.2.5
     database:
       host: postgres-pod.zabbixnet
       port: 5432
