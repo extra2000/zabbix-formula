@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.1.0](https://github.com/extra2000/zabbix-formula/compare/v2.0.0...v2.1.0) (2021-03-15)
+
+
+### Features
+
+* **zabbix-agent:** Update from version `5.0.7` to `5.2.5` ([063b93d](https://github.com/extra2000/zabbix-formula/commit/063b93d757c0d6847d38db81b2c21272c0232f40))
+* **zabbix-server-pgsql:** Update from version `5.0.7` to `5.2.5` ([5a97bb6](https://github.com/extra2000/zabbix-formula/commit/5a97bb67b436dbc9307f0b686efade889075392f))
+* **zabbix-web-nginx-pgsql:** Update from version `5.0.7` to `5.2.5` ([66938eb](https://github.com/extra2000/zabbix-formula/commit/66938eb192b4c3b81bd023b415d0de357e4140ce))
+
 ## [2.0.0](https://github.com/extra2000/zabbix-formula/compare/v1.3.0...v2.0.0) (2021-03-14)
 
 
