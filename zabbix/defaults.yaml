@@ -13,7 +13,7 @@ zabbix:
       bridge: cni-podman0
   server:
     image:
-      name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.0.7
+      name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.2.5
     database:
       host: postgres-pod.zabbixnet
       port: 5432
