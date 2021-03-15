@@ -60,7 +60,7 @@ zabbix:
         memory: 512Mi
   agent:
     image:
-      name: docker.io/zabbix/zabbix-agent:ubuntu-5.0.7
+      name: docker.io/zabbix/zabbix-agent:ubuntu-5.2.5
     server:
       ip: 127.0.0.1
       port: 10051
