@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/extra2000/zabbix-formula/compare/v2.1.0...v2.2.0) (2021-03-16)
+
+
+### Features
+
+* **zabbix_server.conf:** Add `zabbix_server.conf` as volume ([6e8bba7](https://github.com/extra2000/zabbix-formula/commit/6e8bba7f956a7b5ff46c30df528fd64e79efe95d))
+
 ## [2.1.0](https://github.com/extra2000/zabbix-formula/compare/v2.0.0...v2.1.0) (2021-03-15)
 
 
