@@ -46,6 +46,9 @@ spec:
       value: {{ server.loglevel }}
     - name: ZBX_TIMEOUT
       value: {{ server.timeout }}
+    volumeMounts:
+    - mountPath: /etc/zabbix/zabbix_server.conf
+      name: zabbix-server-config
   - name: web
     image: {{ web.image.name }}
     resources:
@@ -93,3 +96,7 @@ spec:
       value: {{ agent.active_allow }}
     - name: ZBX_DEBUGLEVEL
       value: {{ agent.loglevel }}
+  volumes:
+  - name: zabbix-server-config
+    hostPath:
+      path: /opt/zabbix/zabbix_server.conf

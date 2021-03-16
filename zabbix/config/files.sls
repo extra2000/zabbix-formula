@@ -24,6 +24,13 @@
     - context:
       pod: {{ ZABBIX.pod }}
 
+/opt/zabbix/zabbix_server.conf:
+  file.managed:
+    - source: salt://zabbix/files/zabbix_server.conf.jinja
+    - user: {{ ZABBIX.hostuser.name }}
+    - group: {{ ZABBIX.hostuser.group }}
+    - template: jinja
+
 /opt/zabbix/zabbix-server-pod.yaml:
   file.managed:
     - source: salt://zabbix/files/zabbix-server-pod.yaml
