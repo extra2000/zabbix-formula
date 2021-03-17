@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/extra2000/zabbix-formula/compare/v3.0.0...v3.1.0) (2021-03-17)
+
+
+### Features
+
+* Add timezone configurations ([af979fe](https://github.com/extra2000/zabbix-formula/commit/af979fef57e235b7df49fe56c29239377ddc5b37))
+
 ## [3.0.0](https://github.com/extra2000/zabbix-formula/compare/v2.2.0...v3.0.0) (2021-03-17)
 
 
