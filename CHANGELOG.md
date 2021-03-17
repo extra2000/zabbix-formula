@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.0](https://github.com/extra2000/zabbix-formula/compare/v2.2.0...v3.0.0) (2021-03-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Pillar format has changed and Zabbix server is now using host network.
+
+### Code Refactoring
+
+* Remove Zabbix agent ([2e89f12](https://github.com/extra2000/zabbix-formula/commit/2e89f126ad63f29858dcd2692136cec4b5845a26))
+
+
+### Fixes
+
+* Using host network for Zabbix server to ensure active checks are able to reach localhost Zabbix agent ([34c2d85](https://github.com/extra2000/zabbix-formula/commit/34c2d856a30f7d3081fa9ce27d48a0b279d04d63))
+
 ## [2.2.0](https://github.com/extra2000/zabbix-formula/compare/v2.1.0...v2.2.0) (2021-03-16)
 
 
