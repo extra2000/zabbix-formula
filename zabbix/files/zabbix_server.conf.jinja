@@ -10,6 +10,7 @@
 # Range: 1024-32767
 # Default:
 # ListenPort=10051
+ListenPort={{ server.listen_port }}
 
 ### Option: SourceIP
 #       Source IP address for outgoing connections.
@@ -84,7 +85,7 @@ DebugLevel=3
 # Mandatory: no
 # Default:
 # DBHost=localhost
-DBHost=postgres-pod.zabbixnet
+DBHost={{ server.database.host }}
 
 ### Option: DBName
 #       Database name.
@@ -93,7 +94,7 @@ DBHost=postgres-pod.zabbixnet
 # Default:
 # DBName=
 
-DBName=zabbix
+DBName={{ server.database.dbname }}
 
 ### Option: DBSchema
 #       Schema name. Used for PostgreSQL.
@@ -110,7 +111,7 @@ DBSchema=public
 # Default:
 # DBUser=
 
-DBUser=zabbixuser
+DBUser={{ server.database.username }}
 
 ### Option: DBPassword
 #       Database password.
@@ -119,7 +120,7 @@ DBUser=zabbixuser
 # Mandatory: no
 # Default:
 # DBPassword=
-DBPassword=abcde12345
+DBPassword={{ server.database.password }}
 
 ### Option: DBSocket
 #       Path to MySQL socket.
@@ -135,7 +136,7 @@ DBPassword=abcde12345
 # Range: 1024-65535
 # Default:
 # DBPort=
-DBPort=5432
+DBPort={{ server.database.port }}
 
 ### Option: HistoryStorageURL
 #       History storage HTTP[S] URL.

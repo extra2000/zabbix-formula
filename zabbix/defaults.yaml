@@ -14,21 +14,13 @@ zabbix:
   server:
     image:
       name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.2.5
+    listen_port: 10051
     database:
-      host: postgres-pod.zabbixnet
+      host: 127.0.0.1
       port: 5432
       dbname: zabbix
       username: zabbixuser
       password: abcde12345
-    port:
-      passive:
-        container: 10050
-        host: 10050
-        ip: 0.0.0.0
-      active:
-        container: 10051
-        host: 10051
-        ip: 0.0.0.0
     loglevel: 3
     timeout: 4
     resources:
@@ -40,16 +32,11 @@ zabbix:
     image:
       name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.2.5
     database:
-      host: postgres-pod.zabbixnet
+      host: 127.0.0.1
       port: 5432
       dbname: zabbix
       username: zabbixuser
       password: abcde12345
-    port:
-      http:
-        container: 8080
-        host: 8080
-        ip: 0.0.0.0
     server:
       ip: 127.0.0.1
       port: 10051

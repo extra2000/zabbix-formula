@@ -30,6 +30,8 @@
     - user: {{ ZABBIX.hostuser.name }}
     - group: {{ ZABBIX.hostuser.group }}
     - template: jinja
+    - context:
+      server: {{ ZABBIX.server }}
 
 /opt/zabbix/zabbix-server-pod.yaml:
   file.managed:

@@ -4,6 +4,7 @@ metadata:
   name: zabbix-server-pod
 spec:
   restartPolicy: OnFailure
+  hostNetwork: true
   containers:
   - name: server
     image: {{ server.image.name }}
@@ -22,15 +23,6 @@ spec:
         memory: {{ server.resources.requests.memory }}
       limits:
         memory: {{ server.resources.limits.memory }}
-    ports:
-    - containerPort: {{ server.port.passive.container }}
-      hostPort: {{ server.port.passive.host }}
-      hostIP: {{ server.port.passive.ip }}
-      protocol: tcp
-    - containerPort: {{ server.port.active.container }}
-      hostPort: {{ server.port.active.host }}
-      hostIP: {{ server.port.active.ip }}
-      protocol: tcp
     env:
     - name: DB_SERVER_HOST
       value: {{ server.database.host }}
@@ -56,11 +48,6 @@ spec:
         memory: {{ web.resources.requests.memory }}
       limits:
         memory: {{ web.resources.limits.memory }}
-    ports:
-    - containerPort: {{ web.port.http.container }}
-      hostPort: {{ web.port.http.host }}
-      hostIP: {{ web.port.http.ip }}
-      protocol: tcp
     env:
     - name: DB_SERVER_HOST
       value: {{ web.database.host }}

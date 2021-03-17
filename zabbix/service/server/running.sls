@@ -30,7 +30,7 @@ zabbix-server-pod-destroy-if-exists:
 
 zabbix-server-pod-running:
   cmd.run:
-    - name: podman play kube --network=zabbixnet zabbix-server-pod.yaml
+    - name: podman play kube zabbix-server-pod.yaml
     - cwd: /opt/zabbix
     - runas: {{ ZABBIX.hostuser.name }}
     - require:
