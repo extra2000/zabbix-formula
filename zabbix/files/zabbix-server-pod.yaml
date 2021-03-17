@@ -63,6 +63,8 @@ spec:
       value: {{ web.server.ip }}
     - name: ZBX_SERVER_PORT
       value: {{ web.server.port }}
+    - name: PHP_TZ
+      value: {{ web.timezone }}
   volumes:
   - name: zabbix-server-config
     hostPath:
