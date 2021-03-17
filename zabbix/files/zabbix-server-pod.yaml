@@ -76,26 +76,6 @@ spec:
       value: {{ web.server.ip }}
     - name: ZBX_SERVER_PORT
       value: {{ web.server.port }}
-  - name: agent
-    image: {{ agent.image.name }}
-    resources:
-      requests:
-        memory: {{ agent.resources.requests.memory }}
-      limits:
-        memory: {{ agent.resources.limits.memory }}
-    env:
-    - name: ZBX_SERVER_HOST
-      value: {{ agent.server.ip }}
-    - name: ZBX_SERVER_PORT
-      value: {{ agent.server.port }}
-    - name: ZBX_TIMEOUT
-      value: {{ agent.timeout }}
-    - name: ZBX_PASSIVE_ALLOW
-      value: {{ agent.passive_allow }}
-    - name: ZBX_ACTIVE_ALLOW
-      value: {{ agent.active_allow }}
-    - name: ZBX_DEBUGLEVEL
-      value: {{ agent.loglevel }}
   volumes:
   - name: zabbix-server-config
     hostPath:

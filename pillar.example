@@ -55,24 +55,6 @@ zabbix:
           memory: 512Mi
         limits:
           memory: 512Mi
-    agent:
-      server:
-        ip: 127.0.0.1
-        port: 10051
-      port:
-        passive:
-          container: 10050
-          host: 20050
-          ip: 0.0.0.0
-      passive_allow: true
-      active_allow: true
-      timeout: 3
-      loglevel: 3
-      resources:
-        requests:
-          memory: 64Mi
-        limits:
-          memory: 64Mi
     database:
       postgres:
         dbname: zabbix

@@ -22,15 +22,6 @@ zabbix-web-image-present:
         until: true
     - runas: {{ ZABBIX.hostuser.name }}
 
-zabbix-agent-image-present:
-  cmd.run:
-    - name: podman pull {{ ZABBIX.agent.image.name }}
-    - retry:
-        attempts: 10
-        interval: 5
-        until: true
-    - runas: {{ ZABBIX.hostuser.name }}
-
 zabbix-server-pod-destroy-if-exists:
   module.run:
     - state.sls:
@@ -45,5 +36,4 @@ zabbix-server-pod-running:
     - require:
       - cmd: zabbix-server-image-present
       - cmd: zabbix-web-image-present
-      - cmd: zabbix-agent-image-present
       - module: zabbix-server-pod-destroy-if-exists

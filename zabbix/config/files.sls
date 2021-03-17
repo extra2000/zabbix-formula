@@ -40,7 +40,6 @@
     - context:
       server: {{ ZABBIX.server }}
       web: {{ ZABBIX.web }}
-      agent: {{ ZABBIX.agent }}
 
 /opt/zabbix/postgres-pod.yaml:
   file.managed:
