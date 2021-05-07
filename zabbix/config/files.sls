@@ -46,6 +46,7 @@
     - group: {{ ZABBIX.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ ZABBIX.projectname }}
       server: {{ ZABBIX.server }}
       web: {{ ZABBIX.web }}
 
@@ -56,4 +57,5 @@
     - group: {{ ZABBIX.hostuser.group }}
     - template: jinja
     - context:
+      projectname: {{ ZABBIX.projectname }}
       postgres: {{ ZABBIX.database.postgres }}

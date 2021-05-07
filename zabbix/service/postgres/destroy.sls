@@ -6,5 +6,5 @@
 
 postgres-container-destroy:
   cmd.run:
-    - name: podman pod rm --force postgres-pod
+    - name: podman pod rm --force {{ ZABBIX.projectname }}-postgres-pod
     - runas: {{ ZABBIX.hostuser.name }}

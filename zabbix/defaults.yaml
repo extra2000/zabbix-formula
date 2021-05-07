@@ -2,6 +2,7 @@
 # vim: ft=yaml
 
 zabbix:
+  projectname: zabbix
   hostuser:
     name: vagrant
     group: vagrant

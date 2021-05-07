@@ -6,5 +6,5 @@
 
 zabbix-server-pod-destroy:
   cmd.run:
-    - name: podman pod rm --force zabbix-server-pod
+    - name: podman pod rm --force {{ ZABBIX.projectname }}-zabbix-server-pod
     - runas: {{ ZABBIX.hostuser.name }}

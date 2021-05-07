@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: zabbix-server-pod
+  name: {{ projectname }}-zabbix-server-pod
 spec:
   restartPolicy: OnFailure
   hostNetwork: true
