@@ -4,18 +4,24 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import ZABBIX with context %}
 
+{% if ZABBIX.hostuser.name == 'root' %}
+  {% set cni_path = '/etc/cni/net.d/' %}
+{% else %}
+  {% set cni_path = '/home/' + ZABBIX.hostuser.name + '/.config/cni/net.d' %}
+{% endif %}
+
 /opt/zabbix:
   file.directory:
     - user: {{ ZABBIX.hostuser.name }}
     - group: {{ ZABBIX.hostuser.group }}
 
-/home/{{ ZABBIX.hostuser.name }}/.config/cni/net.d:
+{{ cni_path }}:
   file.directory:
     - user: {{ ZABBIX.hostuser.name }}
     - group: {{ ZABBIX.hostuser.group }}
     - makedirs: true
 
-/home/{{ ZABBIX.hostuser.name }}/.config/cni/net.d/podman-network-zabbixnet.conflist:
+{{ cni_path }}/podman-network-zabbixnet.conflist:
   file.managed:
     - source: salt://zabbix/files/podman-network-zabbixnet.conflist.jinja
     - user: {{ ZABBIX.hostuser.name }}
