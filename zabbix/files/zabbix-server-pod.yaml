@@ -41,6 +41,7 @@ spec:
     volumeMounts:
     - mountPath: /etc/zabbix/zabbix_server.conf
       name: zabbix-server-config
+      readOnly: true
   - name: web
     image: {{ web.image.name }}
     resources:
