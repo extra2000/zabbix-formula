@@ -60,6 +60,6 @@ zabbix:
         ip: 127.0.0.1
       resources:
         requests:
-          memory: 256Mi
+          memory: 512Mi
         limits:
-          memory: 256Mi
+          memory: 512Mi
