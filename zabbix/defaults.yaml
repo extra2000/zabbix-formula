@@ -14,7 +14,7 @@ zabbix:
       bridge: cni-podman1
   server:
     image:
-      name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.2.5
+      name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.2.6
     port:
       tcp:
         host: 10051
@@ -33,7 +33,7 @@ zabbix:
         memory: 512Mi
   web:
     image:
-      name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.2.5
+      name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.2.6
     port:
       http:
         server_name: zabbix-web.example.lan
