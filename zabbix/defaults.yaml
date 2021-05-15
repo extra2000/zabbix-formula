@@ -15,7 +15,9 @@ zabbix:
   server:
     image:
       name: docker.io/zabbix/zabbix-server-pgsql:ubuntu-5.2.5
-    listen_port: 10051
+    port:
+      tcp:
+        host: 10051
     database:
       host: 127.0.0.1
       port: 5432
@@ -32,6 +34,9 @@ zabbix:
   web:
     image:
       name: docker.io/zabbix/zabbix-web-nginx-pgsql:ubuntu-5.2.5
+    port:
+      http:
+        server_name: zabbix-web.example.lan
     database:
       host: 127.0.0.1
       port: 5432

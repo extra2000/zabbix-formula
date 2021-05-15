@@ -14,7 +14,9 @@ zabbix:
         domain_name: zabbixnet
         bridge: cni-podman0
     server:
-      listen_port: 10051
+      port:
+        tcp:
+          host: 10051
       database:
         host: 127.0.0.1
         port: 5432
@@ -29,6 +31,9 @@ zabbix:
         limits:
           memory: 512Mi
     web:
+      port:
+        http:
+          server_name: zabbix-web.example.lan
       database:
         host: 127.0.0.1
         port: 5432
