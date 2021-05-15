@@ -1,5 +1,32 @@
 # Changelog
 
+## [4.0.0](https://github.com/extra2000/zabbix-formula/compare/v3.1.0...v4.0.0) (2021-05-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **nginx:** NGINX conf has breaking changes.
+* **salt:** naming scheme for pods and volumes have changed.
+
+### Features
+
+* **nginx:** simplify NGINX conf deployments outside of Vagrant box ([22ea373](https://github.com/extra2000/zabbix-formula/commit/22ea3737a2a4d2ce84e79e43971465fe83c904b8))
+* **postgres:** upgrade from `v13.2` to `v13.3` ([5cc37a4](https://github.com/extra2000/zabbix-formula/commit/5cc37a44de76f4c8d990d467a54838a9289e9bbc))
+* **zabbix:** upgrade from `v5.2.5` to `v5.2.6` ([19aa497](https://github.com/extra2000/zabbix-formula/commit/19aa4976b62768c53c1fe2c7a19798d83aa4f8af))
+
+
+### Code Refactoring
+
+* **salt:** prefix pods and volumes with `projectname` value to prevent naming conflict with other projects ([cdeec63](https://github.com/extra2000/zabbix-formula/commit/cdeec633137083940baf4c151d87607fc8f55899))
+
+
+### Fixes
+
+* **config.files:** Add support for rootful Podman ([0f43992](https://github.com/extra2000/zabbix-formula/commit/0f43992b298991ee8e46a1841118bf7df0ffb146))
+* **podman:** change from `cni-podman0` to `cni-podman1` to avoid conflict with rootful Podman ([2418cfd](https://github.com/extra2000/zabbix-formula/commit/2418cfd40a77cecad38c5fe8fdf5e41c76cc1c9c))
+* **service.postgres:** Increase memory limit from 256Mi to 512Mi to prevent OOM ([ea6ff61](https://github.com/extra2000/zabbix-formula/commit/ea6ff6126372dd05a91480804046e068580b0119))
+* **zabbix_server.conf:** Make the config file mount as `read-only` ([75068f9](https://github.com/extra2000/zabbix-formula/commit/75068f96c6d2056cd7854d667d5938ec1c901fc5))
+
 ## [3.1.0](https://github.com/extra2000/zabbix-formula/compare/v3.0.0...v3.1.0) (2021-03-17)
 
 
