@@ -55,7 +55,7 @@ zabbix:
   database:
     postgres:
       image:
-        name: docker.io/library/postgres:13.2-alpine
+        name: docker.io/library/postgres:13.3-alpine
       dbname: zabbix
       user: zabbixuser
       password: abcde12345
